@@ -13,7 +13,7 @@
         <Company>Denis535</Company>
         <Product>$(AssemblyName)</Product>
         <Copyright></Copyright>
-        <RepositoryUrl></RepositoryUrl>
+        <RepositoryUrl>https://github.com/Denis535/Option</RepositoryUrl>
 
         <!--Nuget package attributes-->
         <IsPackable>true</IsPackable>
@@ -24,7 +24,7 @@
         <PackageIcon>Icon.png</PackageIcon>
         <PackageIconUrl></PackageIconUrl>
         <PackageDescription>$(Description)</PackageDescription>
-        <PackageProjectUrl></PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/Denis535/Option</PackageProjectUrl>
         <PackageTags>option; maybe</PackageTags>
 
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
