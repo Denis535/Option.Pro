@@ -61,7 +61,7 @@ public readonly struct Option<T> : IEquatable<Option<T>>, IEquatable<T>, ICompar
     // Value
     public bool HasValue => hasValue; // Note: Option can have null/default value
     public T Value => hasValue ? value : throw new InvalidOperationException( "Option has no value" ); // Note: therefore, null/default is also valid Option's value
-    public T? ValueOrDefault => hasValue ? value : default; // always null/default if if Option has no value
+    public T? ValueOrDefault => hasValue ? value : default; // always null/default if Option has no value
 
     // Constructor
     public Option() {
@@ -118,6 +118,12 @@ public readonly struct Option<T> : IEquatable<Option<T>>, IEquatable<T>, ICompar
         // todo: how to cast any generic option to any other generic option?
         // https://github.com/dotnet/csharplang/issues/813
         if (value.HasValue) return new Option<T>( (T) value.Value! );
+        return default;
+    }
+    public static explicit operator Option<object?>(Option<T> value) {
+        // todo: how to cast any generic option to any other generic option?
+        // https://github.com/dotnet/csharplang/issues/813
+        if (value.HasValue) return new Option<object?>( value.Value );
         return default;
     }
 
