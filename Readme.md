@@ -113,6 +113,14 @@ public readonly struct Option<T> : IEquatable<Option<T>>, IEquatable<T>, ICompar
     }
 
     // Utils
+    public static explicit operator Option<T>(Option<object?> value) {
+        // todo: how to cast any generic option to any other generic option?
+        // https://github.com/dotnet/csharplang/issues/813
+        if (value.HasValue) return new Option<T>( (T) value.Value! );
+        return default;
+    }
+
+    // Utils
     public static bool operator ==(Option<T> left, Option<T> right) {
         return Option.Equals( left, right );
     }
