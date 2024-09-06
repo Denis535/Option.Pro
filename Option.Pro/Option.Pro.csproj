@@ -13,18 +13,18 @@
         <Company>Denis535</Company>
         <Product>$(AssemblyName)</Product>
         <Copyright></Copyright>
-        <RepositoryUrl>https://github.com/Denis535/Option</RepositoryUrl>
+        <RepositoryUrl>https://github.com/Denis535/Option.Pro</RepositoryUrl>
 
-        <!--Nuget package attributes-->
+        <!--Package attributes-->
         <IsPackable>true</IsPackable>
-        <Title>Option</Title>
-        <PackageId>Option</PackageId>
+        <Title>Option Pro</Title>
+        <PackageId>$(AssemblyName)</PackageId>
         <PackageVersion>$(Version)</PackageVersion>
         <PackageReadmeFile>Readme.md</PackageReadmeFile>
         <PackageIcon>Icon.png</PackageIcon>
         <PackageIconUrl></PackageIconUrl>
         <PackageDescription>$(Description)</PackageDescription>
-        <PackageProjectUrl>https://github.com/Denis535/Option</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/Denis535/Option.Pro</PackageProjectUrl>
         <PackageTags>option; maybe</PackageTags>
 
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -34,7 +34,7 @@
         <IsTool>false</IsTool>
         <DevelopmentDependency>false</DevelopmentDependency>
 
-        <!--Nuget pack options-->
+        <!--Pack options-->
         <PackRelease>true</PackRelease>
 
         <EnableDefaultItems>true</EnableDefaultItems>
