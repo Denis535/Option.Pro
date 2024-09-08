@@ -8,7 +8,7 @@
 
         <!--Assembly attributes-->
         <Version>1.0.1</Version>
-        <Description>The Option is a value container (like Nullable) which may have some value or have nothing</Description>
+        <Description>The Option is a value container which may have some value or have nothing</Description>
         <Authors>Denis535</Authors>
         <Company>Denis535</Company>
         <Product>$(AssemblyName)</Product>

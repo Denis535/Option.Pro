@@ -71,6 +71,10 @@ public readonly struct Option<T> : IEquatable<Option<T>>, IEquatable<T>, ICompar
         this.hasValue = true;
         this.value = value;
     }
+    private Option(bool hasValue, T? value) {
+        this.hasValue = hasValue;
+        this.value = value!;
+    }
 
     // TryGetValue
     public bool TryGetValue([MaybeNullWhen( false )] out T value) {
@@ -113,17 +117,15 @@ public readonly struct Option<T> : IEquatable<Option<T>>, IEquatable<T>, ICompar
     }
 
     // Utils
-    public static explicit operator Option<T>(Option<object?> value) {
-        // todo: how to cast any generic option to any other generic option?
-        // https://github.com/dotnet/csharplang/issues/813
-        if (value.HasValue) return new Option<T>( (T) value.Value! );
-        return default;
-    }
     public static explicit operator Option<object?>(Option<T> value) {
         // todo: how to cast any generic option to any other generic option?
         // https://github.com/dotnet/csharplang/issues/813
-        if (value.HasValue) return new Option<object?>( value.Value );
-        return default;
+        return new Option<object?>( value.hasValue, value.value );
+    }
+    public static explicit operator Option<T>(Option<object?> value) {
+        // todo: how to cast any generic option to any other generic option?
+        // https://github.com/dotnet/csharplang/issues/813
+        return new Option<T>( value.hasValue, (T?) value.value );
     }
 
     // Utils
